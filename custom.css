@@ -1,0 +1,246 @@
+/* Your CSS goes here */
+#root {
+    background: linear-gradient(103.43deg, #151515 2.38%, #1C0100 98.41%);
+}
+
+#root .home {
+    background-color: transparent;
+}
+
+
+/***
+HEADER
+***/
+#root .header {
+    height: 58px;
+}
+
+#root .header-dark {
+    background-color: var(--lumx-color-light-L6);
+}
+
+#root .header .lumx-thumbnail__image {
+    max-width: 70%;
+}
+
+#root .header .lumx-text-field--has-input.lumx-text-field--theme-dark .lumx-text-field__wrapper {
+    box-shadow: none;
+}
+
+
+/***
+HEADLINES
+***/
+#root .headlines-container {
+    align-items: flex-start;
+    text-align: left;
+}
+
+#root .lumx-typography-display1 {
+    font-weight: 500; /* could be added as a variable for a more versatile theme */
+    color: var(--lumx-color-light-N);
+}
+
+/*
+ Ugly rule which proves once more than the naming of a class
+ has to be semantic and not based on the produced effect.
+ Maybe better to name the color according to their place
+ in the color sceme like "primary", "secondary", etc.
+*/
+#root .lumx-typography-display1 .blue-span,
+#root .section-title > span {
+    color: var(--lumx-color-light-N); /* white :-( */
+}
+
+#root .lumx-typography-subtitle2 {
+    font-weight: var(--lumx-typography-font-weight-regular);
+    color: var(--lumx-color-light-L3);
+}
+
+
+/***
+CARDS
+***/
+#root .card-container {
+    height: 380px;
+    flex-direction: column;
+    background: var(--lumx-color-light-L6);
+}
+
+@media screen and (min-width: 1024px) {
+    #root .card-container {
+        height: 210px;
+        flex-direction: row;
+    }
+}
+
+#root .character-image-wrapper {
+    border-right: 0;
+}
+
+@media screen and (max-width: 1023px) {
+    #root .character-image-wrapper {
+        width: auto;
+        height: 180px;
+    }
+
+    #root .character-image {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: var(--lumx-border-radius);
+    }
+}
+
+#root .lumx-typography-title:not(.hero-subtitle) {
+    margin-top: calc(-1 * var(--lumx-spacing-unit-huge));
+}
+
+#root .card-character-desc {
+    color: var(--lumx-color-light-L3);
+    font-size: var(--lumx-typography-custom-body-font-size);
+    line-height: var(--lumx-typography-custom-body-line-height);
+    overflow: hidden;
+}
+
+#root .wave,
+#root .wave-container {
+    display: none;
+}
+
+#root .card-container .right-container {
+    align-items: flex-start;
+}
+
+#root .see-more {
+    padding: 8px 16px !important; /* didn't find a way to override padding without code editing */
+    font-weight: 500;
+    background-color: var(--lumx-color-light-L5);
+    text-decoration: none;
+    margin-top: 16px;
+}
+
+#root .see-more::after {
+    display: none;
+}
+
+/***
+FOOTER
+***/
+#root .footer {
+    background-color: transparent;
+}
+
+/*
+put centering right by adding padding-left
+to the container and margin-right to the logo
+*/
+@media screen and (max-width: 1023px) {
+    #root .footer-top {
+        padding-left: var(--lumx-spacing-unit-medium);
+    }
+
+    #root .footer-top .lumapps-logo {
+        margin-right: var(--lumx-spacing-unit-huge);
+    }
+}
+
+/*
+the two following rules are definitely not my proudest achievment,
+but no code editing means no code editing, right? :-)
+*/
+#root .footer .lumx-typography-subtitle2 {
+    display: inline-flex;
+    text-indent: -1000em;
+}
+
+#root .footer .lumx-typography-subtitle2::after {
+    content: 'Pierre';
+    text-indent: 0;
+    display: block;
+    color: var(--lumx-color-light-N);
+}
+
+
+/***
+SINGLE
+***/
+#root .hero-wrapper {
+    background: var(--lumx-color-light-L6);
+}
+
+#root .back-section-container,
+#root .back-text {
+    color: var(--lumx-color-light-N);
+    font-size: var(--lumx-typography-custom-body-font-size);
+}
+
+#root .left-container {
+    text-align: left;
+}
+
+/* not a big fan of this one */
+#root .hero-image > div {
+    width: 100%;
+    height: 100%;
+}
+
+/*
+figma says 32px but no variables with semantic name
+could have done the job, so I chose 24px instead
+*/
+#root .hero-content-container .right-container {
+    margin-top: var(--lumx-spacing-unit-huge);
+}
+
+#root .hero-title {
+    font-size: var(--lumx-typography-interface-display1-font-size);
+    font-weight: 500;
+    line-height: var(--lumx-typography-interface-display1-line-height);
+}
+
+#root .hero-subtitle {
+    font-size: var(--lumx-typography-interface-subtitle2-font-size);
+    font-weight: var(--lumx-typography-font-weight-regular);
+    line-height: var(--lumx-typography-interface-subtitle2-line-height);
+    color: var(--lumx-color-light-L3);
+}
+
+
+/***
+COMICS CARD
+***/
+#root .comics-container {
+    margin-left: calc(-1 * var(--lumx-spacing-unit-huge));
+    margin-right: calc(-1 * var(--lumx-spacing-unit-huge));
+    max-width: none;
+}
+
+#root .comics-card {
+    width: 100%;
+    display: flex;
+    padding: var(--lumx-spacing-unit-big);
+    background-color: var(--lumx-color-light-L6);
+    border-radius: var(--lumx-border-radius);
+}
+
+#root .comics-card:not(:last-child) {
+    margin-bottom: var(--lumx-spacing-unit-huge) !important; /* outch, a kitten just died */
+}
+
+#root .cover-container {
+    height: auto;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 1023px) {
+    #root .cover-img {
+        width: 45%;
+    }
+}
+
+
+/***
+OTHER SECTION
+***/
+#root .other-section-wrapper {
+    background-color: var(--lumx-color-light-L3);
+}
